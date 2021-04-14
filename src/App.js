@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Intervalo from './intervalo';
+import Painel from './Painel';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <div className="App">
+
+        <Switch>
+          <Route path="/painel">
+            <Painel lista = {[]}/>
+          </Route>
+          <Route path="/">
+            <Intervalo num = {0}/>
+          </Route>    
+        </Switch>
+
+      </div>
+
+    </BrowserRouter>
   );
 }
 
